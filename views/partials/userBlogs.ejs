@@ -1,0 +1,20 @@
+<div class="container mx-auto my-20 px-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <% user.blogs.forEach((blog) => { %>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-500 hover:scale-105 cursor-pointer border border-gray-200">
+                <div class="h-[40vh] overflow-hidden">
+                    <img src="<%= blog.blogImage %>" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" alt="Blog Image">
+                </div>
+                <div class="p-5">
+                    <h2 class="text-xl font-semibold uppercase mb-3">
+                        <a href="/blogs/blogDetail/<%= blog._id %>" class="text-gray-800 hover:text-blue-500 transition-colors duration-300"><%= blog.title %></a>
+                    </h2>
+                    <p class="text-gray-600 text-sm">
+                        <%= blog.description.slice(0, 100) %>... 
+                        <a href="/blogs/blogDetail/<%= blog._id %>" class="text-blue-500 hover:underline">Read more</a>
+                    </p>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>

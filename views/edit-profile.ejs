@@ -1,0 +1,29 @@
+<%- include('./partials/header')%>
+
+
+<h2 class="text-center text-3xl font-bold mb-10 mt-20">Edit Your Profile</h2>
+<form action="/users/edit-profile/<%= user._id%>" method="post" enctype="multipart/form-data" class="w-[50vw] m-auto">
+   <div class="flex w-full justify-between">
+    <div class="w-[45%]">
+        <label for="name" class="uppercase text-[14px] font-bold text-gray-500 tracking-wider">Full Name</label>
+        <input type="text" name="name" placeholder="Full Name" id="name" class="w-full py-2 outline-none border-b-2 mb-5 capitalize" value="<%= user.name%>">
+        <label for="username" class="uppercase text-[14px] font-bold text-gray-500 tracking-wider">UserName</label>
+        <input type="text" name="username" placeholder="Username" id="username" class="w-full py-2 outline-none border-b-2 mb-5 lowercase" value="<%= user.username%>">
+        <label for="profilepic" class="uppercase text-[14px] font-bold text-gray-500 tracking-wider">Profile Pic</label>
+        <input type="file" name="profilepic" placeholder="profilepic url" id="profilepic" class="w-full py-2 outline-none border-b-2 mb-5 lowercase" value="<%= user.profilepic%>">
+    </div>
+    <div class="w-[45%]">
+        <label for="email" class="uppercase text-[14px] font-bold text-gray-500 tracking-wider">Email Address</label>
+        <input type="email" name="email" placeholder="name@example.com" id="email" class="w-full py-2 outline-none border-b-2 mb-5" value="<%= user.email%>">
+        <label for="bio" class="uppercase text-[14px] font-bold text-gray-500 tracking-wider">Bio</label>
+        <input type="bio" name="bio" placeholder="Bio" id="bio" class="w-full py-2 outline-none border-b-2 mb-5" value="<%= user.bio%>">
+        <label for="backgroundImage" class="uppercase text-[14px] font-bold text-gray-500 tracking-wider">BackGround Cover</label>
+        <input type="file" name="backgroundImage" placeholder="backgroundImage url" id="backgroundImage" class="w-full py-2 outline-none border-b-2 mb-5 lowercase" value="<%= user.backgroundImage%>">
+    </div>
+   </div>
+   <button class="w-full bg-black text-white py-2 text-xl mt-5">Edit Profile</button>
+   <p class="text-center mt-10 text-gray-500 font-[500]">Secure Login with reCAPTCHA subject to Google <br> Terms & Privacy</p>
+</form>
+
+
+<%- include('./partials/footer')%>

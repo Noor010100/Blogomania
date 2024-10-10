@@ -1,0 +1,24 @@
+<%- include('./partials/header')%>
+<%- include('./partials/nav')%>
+
+<h2 class="text-center text-3xl font-bold mb-10 mt-20 ">Create Blog</h2>
+<form action="/blogs/create" method="post" enctype="multipart/form-data" class="w-[50vw] m-auto bg-black p-10 rounded">
+    <div class="w-full flex justify-between">
+        <div class="w-[48%]">
+            <label for="title" class="uppercase text-[14px] font-bold text-white tracking-wider">Blog Title:</label>
+            <input type="text" name="title"  id="title" class="w-full py-2 outline-none border-b-2 mb-5 rounded">
+        </div>
+        <div class="w-[48%]">
+            <label for="description" class="uppercase text-[14px] font-bold text-white tracking-wider">Blog Description:</label>
+            <input type="text" name="description" id="description" class="w-full py-2 outline-none border-b-2 mb-5 rounded">
+        </div>
+    </div>
+    <label for="blogImage" class="uppercase text-[14px] font-bold text-white tracking-wider">Blog Image:</label>
+    <input type="file" name="blogImage"  id="blogImage" class="w-full py-2 outline-none border-b-2 mb-5 rounded">
+    <label for="details" class="uppercase text-[14px] font-bold text-white tracking-wider">Blog Details:</label>
+    <textarea type="text" name="details" placeholder="Enter blog details...." id="details" rows="5" class="w-full py-2 outline-none border-b-2 mb-5 rounded"></textarea>
+   <button class="w-full text-white hover:text-black border border-white hover:bg-white py-2 text-xl mt-5 rounded">Create Blog </button>
+</form>
+
+
+<%- include('./partials/footer')%>
